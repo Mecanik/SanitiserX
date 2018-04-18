@@ -6,6 +6,12 @@ Zend 2/3 Module that sanitises requests and inputs against XSS (Cross-Site Scrip
 
 ## Zend Framework 3 instructions:
 
+#### Install the module with composer:
+
+```
+composer require mecanik/sanitiser-x
+```
+
 #### Create *sanitiserx.local.php* in *PROJECT\config\autoload*:
 
 ```
