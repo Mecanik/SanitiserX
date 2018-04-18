@@ -1,5 +1,5 @@
 # SanitiserX
-Zend 2/3 Module that sanitises requests and inputs against XSS, SQL Injection and more
+Zend 2/3 Module that sanitises requests and inputs against XSS (Cross-Site Scripting), CSRF (Cross-Site Request Forgery), RFI (Remote File Inclusion), LFI (Local File Inclusion), SQLi (SQL Injection) and more...
 
 
 *Since this module is in active development, these instructions may change. Please check regularly for the latest updates, settings, features and implementation.*
