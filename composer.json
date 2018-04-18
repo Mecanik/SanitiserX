@@ -4,28 +4,28 @@
 			"Mecanik\\SanitiserX\\" : "src"
 		}
 	},
-	"name" : "Mecanik/SanitiserX",
+	"name" : "mecanik/sanitiser-x",
 	"description" : "Zend 2/3 Module that sanitises requests and inputs against XSS, SQL Injection and more",
 	"require" : {
 		"php" : ">=7.0",
-        "geoip/geoip": "^1.17",
-        "guzzlehttp/guzzle": "~6.0",
-        "zendframework/zend-mvc": "^3.0",
-        "zendframework/zend-modulemanager": "~2.7",
-        "zendframework/zend-servicemanager": "~3.0",
-        "zendframework/zend-eventmanager": "~3.0",
-        "zendframework/zend-view": "^2.8",
-        "zendframework/zend-hydrator": "^2.2",
-        "zendframework/zend-filter": "^2.7",
-        "zendframework/zend-mvc-console": "^1.1"
-    },
-    "require-dev": {
-        "zendframework/zend-serializer": "^2.8",
-        "zendframework/zend-log": "^2.9",
-        "zendframework/zend-i18n": "^2.7",
-        "zendframework/zend-config": "^3.1",
-        "phpunit/phpunit": "~5.7"
-    },
+		"geoip/geoip" : "^1.17",
+		"guzzlehttp/guzzle" : "~6.0",
+		"zendframework/zend-mvc" : "^3.0",
+		"zendframework/zend-modulemanager" : "~2.7",
+		"zendframework/zend-servicemanager" : "~3.0",
+		"zendframework/zend-eventmanager" : "~3.0",
+		"zendframework/zend-view" : "^2.8",
+		"zendframework/zend-hydrator" : "^2.2",
+		"zendframework/zend-filter" : "^2.7",
+		"zendframework/zend-mvc-console" : "^1.1"
+	},
+	"require-dev" : {
+		"zendframework/zend-serializer" : "^2.8",
+		"zendframework/zend-log" : "^2.9",
+		"zendframework/zend-i18n" : "^2.7",
+		"zendframework/zend-config" : "^3.1",
+		"phpunit/phpunit" : "~5.7"
+	},
 	"minimum-stability" : "dev",
 	"authors" : [{
 			"name" : "Norbert Boros",
