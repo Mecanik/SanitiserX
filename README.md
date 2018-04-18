@@ -13,7 +13,7 @@ Zend 2/3 Module that sanitises requests and inputs against XSS, SQL Injection an
 /**
  * SanitiserX
  *
- * Zend 2/3 Module that sanitises requests and inputs against XSS, SQL Injection and more
+ * Zend 2/3 Module that sanitises requests and inputs against XSS (Cross-Site Scripting), CSRF (Cross-Site Request Forgery), RFI (Remote File Inclusion), LFI (Local File Inclusion), SQLi (SQL Injection) and more...
  *
  * @link https://github.com/Mecanik/SanitiserX
  * @copyright Copyright (c) 2018 Norbert Boros ( a.k.a Mecanik )

@@ -5,8 +5,8 @@
 		}
 	},
 	"name" : "mecanik/sanitiser-x",
-	"description" : "Zend 2/3 Module that sanitises requests and inputs against XSS, SQL Injection and more",
-	"keywords": "zend 2, zend 3, security, xss filter, sql, sanitiser, sanitise xss",
+	"description" : "Zend 2/3 Module that sanitises requests and inputs against XSS (Cross-Site Scripting), CSRF (Cross-Site Request Forgery), RFI (Remote File Inclusion), LFI (Local File Inclusion), SQLi (SQL Injection) and more...",
+	"keywords": ["zend 2, zend 3, security, xss filter, sql, sanitiser, sanitise xss"],
 	"require" : {
 		"php" : ">=7.0",
 		"geoip/geoip" : "^1.17",
