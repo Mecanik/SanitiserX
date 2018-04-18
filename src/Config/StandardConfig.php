@@ -4,9 +4,9 @@
  *
  * Zend 2/3 Module that sanitises requests and inputs against XSS, SQL Injection and more
  *
- * @link
+ * @link https://github.com/Mecanik/SanitiserX
  * @copyright Copyright (c) 2018 Norbert Boros ( a.k.a Mecanik )
- * @license
+ * @license https://github.com/Mecanik/SanitiserX/blob/master/LICENSE
  */
 
 namespace Mecanik\SanitiserX\Config;
@@ -28,17 +28,17 @@ class StandardConfig implements \Mecanik\SanitiserX\Config\ConfigInterface
     /**
      * Set GET Requests Filtering ON/OFF
      *
-     * @param  bool $boolean
+     * @param  int $int
      * @return StandardConfig
      * @throws Exception\InvalidArgumentException
      */
-    public function setFilterGETRequests($boolean)
-    {
-        if (!is_bool($boolean)) {
-            throw new Exception\InvalidArgumentException('Invalid Filter GET Requests; must be boolean.');
+    public function setFilterGETRequests($int)
+    {       
+        if (!is_integer($int)) {
+            throw new Exception\InvalidArgumentException('Invalid Filter GET Requests; must be integer value 0 or 1.');
         }
         
-        $this->setOption('REQUESTS_FILTER_GET', $boolean);
+        $this->setOption('REQUESTS_FILTER_GET', $int);
 
         return $this;
     }
@@ -93,6 +93,7 @@ class StandardConfig implements \Mecanik\SanitiserX\Config\ConfigInterface
         
         return;
     }
+    
     public function hasOption($option)
     {}
 

@@ -4,9 +4,9 @@
  *
  * Zend 2/3 Module that sanitises requests and inputs against XSS, SQL Injection and more
  *
- * @link
+ * @link https://github.com/Mecanik/SanitiserX
  * @copyright Copyright (c) 2018 Norbert Boros ( a.k.a Mecanik )
- * @license
+ * @license https://github.com/Mecanik/SanitiserX/blob/master/LICENSE
  */
 
 namespace Mecanik\SanitiserX;
@@ -17,4 +17,6 @@ interface ManagerInterface
 {
     public function setConfig(Config $config);
     public function getConfig();
+    
+    public function sanitiseGET($value = null, $type = self::FILTER_TYPE_XSS);
 }
