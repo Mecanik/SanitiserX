@@ -62,7 +62,7 @@ abstract class AbstractManager implements Manager
                 ));
             }
         }
-
+        
         $this->config = $config;
     }
 
@@ -87,5 +87,4 @@ abstract class AbstractManager implements Manager
     {
         return $this->config;
     }
-
 }

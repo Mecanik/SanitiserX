@@ -29,7 +29,7 @@ class ConfigProvider
             'factories' => [
                 Config\ConfigInterface::class => Service\SanitiserXConfigFactory::class,
                 ManagerInterface::class => Service\SanitiserXManagerFactory::class,
-            ],
+            ]
         ];
     }
 }

@@ -18,5 +18,5 @@ interface ManagerInterface
     public function setConfig(Config $config);
     public function getConfig();
     
-    public function sanitiseGET($value = null, $type = self::FILTER_TYPE_XSS);
+    public function SanitiseInput($value = null, $type = self::FILTER_TYPE_XSS);
 }

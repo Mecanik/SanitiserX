@@ -1,8 +1,8 @@
 # SanitiserX
 Zend 2/3 Module that sanitises requests and inputs against XSS (Cross-Site Scripting), CSRF (Cross-Site Request Forgery), RFI (Remote File Inclusion), LFI (Local File Inclusion), SQLi (SQL Injection) and more...
 
-
 *Since this module is in active development, these instructions may change. Please check regularly for the latest updates, settings, features and implementation.*
+
 
 ## Zend Framework 3 instructions:
 
@@ -19,27 +19,54 @@ composer require mecanik/sanitiser-x
 /**
  * SanitiserX
  *
- * Zend 2/3 Module that sanitises requests and inputs against XSS (Cross-Site Scripting), CSRF (Cross-Site Request Forgery), RFI (Remote File Inclusion), LFI (Local File Inclusion), SQLi (SQL Injection) and more...
+ * Zend 2/3 Module that sanitises requests and inputs against XSS, SQL Injection and more
  *
  * @link https://github.com/Mecanik/SanitiserX
  * @copyright Copyright (c) 2018 Norbert Boros ( a.k.a Mecanik )
  * @license https://github.com/Mecanik/SanitiserX/blob/master/LICENSE
  */
+
+
 return [
     // More settings are being added, this is just basic
     'sanitiserx_config' => [
         
         'REQUESTS_FILTER_GET' => 1, 
-        
         'REQUESTS_GET' => [
+            'AUTO_FILTER_XSS' => 1,
+            'AUTO_FILTER_SQL' => 1,
+        ],
+        
+        'REQUESTS_FILTER_POST'=> 1,
+        'REQUESTS_POST' => [
+            'AUTO_FILTER_XSS' => 1,
+            'AUTO_FILTER_SQL' => 1,
+        ],
+        
+        'REQUESTS_FILTER_COOKIES'=> 0,
+        'REQUESTS_COOKIES' => [
             'AUTO_FILTER_XSS' => 0,
             'AUTO_FILTER_SQL' => 0,
         ],
         
+        'REQUESTS_FILTER_HTTP_USER_AGENT'=> 0,
+        'REQUESTS_FILTER_HTTP_REFERER'=> 0,
+        'REQUESTS_FILTER_HTTP_PATH_INFO'=> 0,
+        'REQUESTS_FILTER_HTTP_PATH_TRANSLATED'=> 0,
+        'REQUESTS_FILTER_HTTP_PHP_SELF'=> 0,
+        
         'OPTIONS' => [
-            //todo
+            'LOG' => [
+                'LOG_UID' => 1,
+                'LOG_IP' => 1,
+                'LOG_DNS' => 1,
+                'LOG_REFERER' => 1,
+                'LOG_REQUEST_URL' => 1,
+                'LOG_REQUEST_METHOD' => 1,
+            ],
         ]
     ],
+    
 ];
 ```
 
@@ -103,7 +130,7 @@ class MyController extends AbstractActionController
    	 
    	 public function someAction()
    	 {
-   	 	$this->security->sanitiseGET($_GET['username'], 1);
+   	 	$this->security->SanitiseInput($_GET['username'], 1);
    	 }
 }
 
@@ -115,26 +142,31 @@ class MyController extends AbstractActionController
 
 // Cross-Site Scripting
 // FILTER_TYPE_XSS = 1
-$this->security->sanitiseGET($_GET['username'], 1);   
+$this->security->SanitiseInput($_GET['username'], 1);   
 
 //Cross-Site Request Forgery
 //FILTER_TYPE_CSRF = 2
 
-$this->security->sanitiseGET($_GET['username'], 2);   
+$this->security->SanitiseInput($_GET['username'], 2);   
 
 //SQL Injection
 //FILTER_TYPE_SQLi = 3
 
-$this->security->sanitiseGET($_GET['username'], 3);   
+$this->security->SanitiseInput($_GET['username'], 3);   
 
 //Remote File Inclusion
 //FILTER_TYPE_RFI = 4
 
-$this->security->sanitiseGET($_GET['username'], 4);   
+$this->security->SanitiseInput($_GET['username'], 4);   
 
 //Local File Inclusion
 //FILTER_TYPE_LFI = 5
 
-$this->security->sanitiseGET($_GET['username'], 5);   
+$this->security->SanitiseInput($_GET['username'], 5);   
+
+//All filters possible
+//FILTER_TYPE_ALL = 6
+
+$this->security->SanitiseInput($_GET['username'], 6);
     
 ```

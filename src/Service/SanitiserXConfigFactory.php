@@ -68,13 +68,14 @@ class SanitiserXConfigFactory implements FactoryInterface
             ));
         }
         
-        //var_dump($config);
-        
-        //TODO
-        // Now this is ugly, what the heck !? Need to understand how to pass configuration values as int properly; even better boolean!
-        
         $sanitiserXConfig->setFilterGETRequests((int)$config['REQUESTS_FILTER_GET']);
-
+        $sanitiserXConfig->setOption("LOG_UID", (int)$config['OPTIONS']['LOG']['LOG_UID']);
+        $sanitiserXConfig->setOption("LOG_IP", (int)$config['OPTIONS']['LOG']['LOG_IP']);
+        $sanitiserXConfig->setOption("LOG_DNS", (int)$config['OPTIONS']['LOG']['LOG_DNS']);
+        $sanitiserXConfig->setOption("LOG_REFERER", (int)$config['OPTIONS']['LOG']['LOG_REFERER']);   
+        $sanitiserXConfig->setOption("LOG_REQUEST_URL", (int)$config['OPTIONS']['LOG']['LOG_REQUEST_URL']);
+        $sanitiserXConfig->setOption("LOG_REQUEST_METHOD", (int)$config['OPTIONS']['LOG']['LOG_REQUEST_METHOD']);
+        
         return $sanitiserXConfig;
     }
 
