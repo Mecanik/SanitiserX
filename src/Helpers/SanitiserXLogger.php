@@ -11,7 +11,6 @@
 
 namespace Mecanik\SanitiserX\Helpers;
 
-use Zend\Log\LogLevel;
 use Zend\Log\Formatter;
 use Zend\Log\Writer;
 use Zend\Log\Logger;

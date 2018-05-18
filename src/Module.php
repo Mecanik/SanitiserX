@@ -105,7 +105,7 @@ class Module
                 if($request->getMethod() == 'POST') {
                     
                     // POST params - $postParams is an instance of \Zend\Stdlib\Parameters
-                    $postParams  = $request->getPost()->toArray();
+                    $postParams  = $request->getPost();
                     
                     // Check if there is a query parameter, eg: example: 12345
                     if (!empty($postParams)) {
